@@ -104,7 +104,6 @@ LEFT JOIN Orders ON Tables.Number = Orders.Table_number
 WHERE Orders.Table_number IS NULL
 
 
-
 SELECT * FROM Orders
 WHERE DATEDIFF(MINUTE, Datetm, GETDATE()) <= 30
 
@@ -113,9 +112,3 @@ SELECT Tables.Number AS TableNumber
 FROM Tables
 LEFT JOIN Orders ON Tables.Number = Orders.Table_number  AND Orders.Datetm >= DATEADD(MINUTE, -60, GETDATE())
 WHERE Orders.Id IS NULL
-
-
-SELECT Tables.Number AS TableNumber
-FROM Tables
-LEFT JOIN Orders ON Tables.Number = Orders.Table_number AND Orders.Datetm >= DATEADD(MINUTE, -60, GETDATE())
-WHERE Orders.Id IS NULL;
